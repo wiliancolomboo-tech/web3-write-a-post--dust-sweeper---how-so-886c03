@@ -1,0 +1,38 @@
+flowchart TD
+    subgraph Client["1. User & Client Interface"]
+        U[User Wallet / CLI Agent]
+        RPC[Solana JSON-RPC Pool]
+    end
+
+    subgraph OffChain["2. Oracle & Quest Verification Engine"]
+        SO[Social Oracle Service]
+        TW[Twitter / X API v2]
+        DC[Discord Guild API]
+        WH[Enterprise Webhook / Slack]
+    end
+
+    subgraph OnChain["3. Solana Program (dust_sweeper_xp)"]
+        PDA_CFG[Global Protocol Config PDA]
+        PDA_USR[User Profile & XP PDA]
+        ATA[Dormant Token ATA]
+        BURN[SPL Token Burn / Close CPI]
+    end
+
+    %% Rent Sweep Flow
+    U -->|1. Query Token Accounts| RPC
+    RPC -->|2. Return Inactive ATAs| U
+    U -->|3. Invoke sweep_dust_and_close_account| OnChain
+    OnChain -->|4. CPI Token Close & Burn| ATA
+    ATA -->|5. Refund ~0.002039 SOL Rent| U
+    OnChain -->|6. Credit Sweep XP & Increment Nonce| PDA_USR
+
+    %% Social Quest Flow
+    U -->|7. Complete Social Task| TW
+    U -->|7. Join Guild / Role| DC
+    SO -->|8. Verify Social Graph Activity| TW
+    SO -->|8. Verify Roles| DC
+    SO -->|9. Sign Ed25519 Quest Attestation| U
+    U -->|10. Invoke verify_and_claim_social_quest| OnChain
+    OnChain -->|11. Verify Oracle Signature & Quest Bitmask| PDA_USR
+    PDA_USR -->|12. Emit QuestCompletedEvent| RPC
+    RPC -->|13. Webhook Ingestion| WH
