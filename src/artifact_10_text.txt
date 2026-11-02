@@ -1,0 +1,4 @@
+How it works under the hood:
+1️⃣ Scan & reclaim: SolSweep liquidates micro-dust & burns zero-balance ATAs via CPI, returning pure SOL to your wallet.
+2️⃣ Social Quests: Verify your @X, @Discord, & GitHub activity with Ed25519 oracle attestations.
+3️⃣ Soulbound XP: Quests level up your loyalty tier to waive sweep fees 100%! 🛡️⚡

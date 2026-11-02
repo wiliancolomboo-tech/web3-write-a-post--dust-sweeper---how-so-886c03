@@ -1,0 +1,6 @@
+How it works under the hood:
+1️⃣ Scans your ATAs, burns valueless dust, & routes redeemable dust via @JupiterExchange V6.
+2️⃣ Closes empty accounts & returns 100% of the rent SOL directly to your balance.
+3️⃣ Complete community social quests (X/Discord) ➡️ Our Ed25519 Oracle attests on-chain ➡️ Instant XP PDA leveling.
+
+Zero stubs. Pure cryptographic composability.

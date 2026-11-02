@@ -1,0 +1,1 @@
+solana account $(solana address -k target/deploy/dust_sweeper-keypair.json)

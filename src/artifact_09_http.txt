@@ -1,0 +1,2 @@
+GET /health
+  Response: {"status": "ok", "cluster": "mainnet-beta", "oraclePubkey": "..."}

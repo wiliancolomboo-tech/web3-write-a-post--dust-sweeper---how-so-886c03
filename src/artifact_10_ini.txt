@@ -1,0 +1,10 @@
+# Solana Network Configuration
+SOLANA_RPC_URL="https://api.mainnet-beta.solana.com"
+PROGRAM_ID="DustXP1111111111111111111111111111111111111"
+
+# Keys formatted as JSON array byte strings: [12, 45, 98, ...]
+USER_PRIVATE_KEY="[...]"
+ORACLE_PRIVATE_KEY="[...]"
+
+# Enterprise Webhook (Discord / Slack / Teams)
+NOTIFICATION_WEBHOOK_URL="https://api.example.com/webhooks/alerts/placeholder"

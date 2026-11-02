@@ -1,0 +1,14 @@
++-----------------------------------------------------------------------------------+
+|                           INCIDENT & OPS RESPONSE MATRIX                          |
++----------------------+--------------------------+---------------------------------+
+| Incident Scenario    | Root Cause               | Mitigation Action               |
++----------------------+--------------------------+---------------------------------+
+| RPC 429 Too Many Req | Public RPC Rate Limiting | Switch to Helius / Triton RPC.  |
+|                      |                          | Configure fallback pool in .env |
++----------------------+--------------------------+---------------------------------+
+| Rent Closure Reverts | Token balance > threshold| Check Token-2022 freeze hooks   |
+|                      | or frozen accounts       | or transfer-fee extensions.     |
++----------------------+--------------------------+---------------------------------+
+| Quest Sig Invalid    | Clock skew > 3600 sec or | Synchronize server with NTP.    |
+|                      | signer key mismatch      | Verify Config PDA authority key.|
++----------------------+--------------------------+---------------------------------+

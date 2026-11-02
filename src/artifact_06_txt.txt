@@ -1,0 +1,8 @@
+client/
+├── package.json
+├── tsconfig.json
+├── src/
+│   ├── index.ts
+│   ├── sweeperEngine.ts
+│   ├── questAttester.ts
+│   └── telemetry.ts

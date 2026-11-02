@@ -1,0 +1,1 @@
+0 0 * * 0 docker compose -f /opt/solana-dust-sweeper/docker-compose.yml up --abort-on-container-exit

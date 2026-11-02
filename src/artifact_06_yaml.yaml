@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  sweeper-oracle-worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
+      - PROGRAM_ID=DustXP1111111111111111111111111111111111111
+      - ORACLE_PRIVATE_KEY=${ORACLE_PRIVATE_KEY}
+      - WEBHOOK_URL=${SLACK_OR_DISCORD_WEBHOOK_URL}
+      - PORT=8080
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 3

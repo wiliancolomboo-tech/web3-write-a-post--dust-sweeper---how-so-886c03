@@ -1,0 +1,2 @@
+GET /metrics
+  Response: {"swept_sol_reclaimed": 2841.42, "quests_verified": 49201, "error_rate": 0.0001}

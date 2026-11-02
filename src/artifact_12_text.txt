@@ -1,0 +1,6 @@
+Did you know your Solana wallet is bleeding SOL? 🩸
+
+Every token you've traded leaves behind an SPL account locking ~0.00204 SOL in rent.
+Got 50 dead airdrops? That’s 0.1+ SOL trapped for zero reason.
+
+Introducing SolSweeper XP: Reclaim your rent lamports AND turn on-chain cleanup into protocol XP 🧵👇

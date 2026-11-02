@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  sweeper-daemon:
+    build: .
+    restart: always
+    environment:
+      - SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
+      - PROGRAM_ID=DustSwp1111111111111111111111111111111111111
+      - MAX_DUST_UNITS=1000000
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - ADMIN_ALERT_EMAIL=security@enterprise-protocol.io
+      - ORACLE_KEYPAIR_PATH=/run/secrets/oracle_keypair
+      - USER_KEYPAIR_PATH=/run/secrets/worker_keypair
+    secrets:
+      - oracle_keypair
+      - worker_keypair
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/health', (r) => r.statusCode === 200 ? process.exit(0) : process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+secrets:
+  oracle_keypair:
+    file: ./secrets/oracle.json
+  worker_keypair:
+    file: ./secrets/worker.json

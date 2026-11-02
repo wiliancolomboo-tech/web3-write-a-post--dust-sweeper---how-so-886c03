@@ -1,0 +1,12 @@
+{
+  "status": "healthy",
+  "programId": "DustXp1111111111111111111111111111111111111",
+  "connectedRpc": "https://api.devnet.solana.com",
+  "lastProcessedSlot": 268910412,
+  "uptimeSeconds": 86400,
+  "integrations": {
+    "slack": "connected",
+    "discord": "connected",
+    "resend": "connected"
+  }
+}

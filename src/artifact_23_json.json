@@ -1,0 +1,8 @@
+{
+  "status": "healthy",
+  "version": "1.0.0",
+  "rpcLatencyMs": 42,
+  "totalRentRecoveredSol": 142.859,
+  "accountsSweptTotal": 70054,
+  "activeQuestsVerified": 18230
+}

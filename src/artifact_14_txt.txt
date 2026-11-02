@@ -1,0 +1,7 @@
+Turn trash tokens into liquid SOL and flex your Diamond Sweeper badge across the ecosystem. 
+
+Try the CLI & deploy your own enterprise sweeper agent today:
+🔗 GitHub: github.com/solana-bounty/dust-sweeper-quest
+⚡ Powered by @solana & @anchorlang
+
+Clean your wallet now: [Link]

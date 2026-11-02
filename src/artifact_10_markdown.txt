@@ -1,0 +1,23 @@
+🧵 1/3
+Tired of dead token dust clogging your Solana wallet? 
+
+Every empty SPL account locks up ~0.002 SOL in rent-exempt reserve. 50 dead accounts = 0.1 SOL trapped doing nothing.
+
+Introducing the Solana Dust Sweeper + Social Quest Engine 🧹✨
+Reclaim your SOL & turn wallet cleanup into on-chain XP. 👇
+
+🧵 2/3
+How it works under the hood:
+🔹 1-Click Sweep: Identifies zero-balance & micro-dust accounts, reclaims locked SOL straight back to your wallet.
+🔹 Proof-of-Action XP: Earn on-chain XP for every sweep + verified Social Quests (X syndication, referrals, community tasks).
+🔹 Cryptographic Integrity: Ed25519 oracle signatures guarantee zero sybil exploitability.
+
+Built with @coral_xyz Anchor on @solana. ⚡️
+
+🧵 3/3
+Enterprise-ready with real-time Discord telemetry, Resend email notifications, and Jupiter Aggregator routing.
+
+Don't let dead state drain your capital. Sweep your dust, climb the leaderboard, and unlock the next tier of DeFi quests! 
+
+Check out the open-source repo & deploy your sweeper daemon today! 🚀
+#Solana #DeFi #Web3 #Rust

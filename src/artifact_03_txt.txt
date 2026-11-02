@@ -1,0 +1,19 @@
++----------------------------------------------------------------------------------------+
+|                                  TOPOLOGY OVERVIEW                                     |
+|                                                                                        |
+|  [User Terminal / Web3 DApp]                                                           |
+|             |                                                                          |
+|             v                                                                          |
+|   [Sweeper Worker Client] <======> [Social Verification Gateway] (Ed25519 Oracle)      |
+|        |            |                                                                  |
+|        | (Anchor)   | (REST)                                                           |
+|        v            v                                                                  |
+|  [Solana RPC]   [Jupiter v6 API]                                                       |
+|   (Mainnet-Beta)                                                                       |
+|        |                                                                               |
+|        v                                                                               |
+|  [Enterprise Notification Layer]                                                       |
+|        +-----> [Discord Webhook API]   --> #ops-sweeper-stream                         |
+|        +-----> [Slack Incoming Webhook] --> #alerts-growth                             |
+|        +-----> [Resend REST API v1]    --> Transaction Receipts to User                |
++----------------------------------------------------------------------------------------+

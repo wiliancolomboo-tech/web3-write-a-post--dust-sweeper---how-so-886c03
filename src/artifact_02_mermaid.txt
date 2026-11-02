@@ -1,0 +1,46 @@
+flowchart TD
+    subgraph ClientLayer ["Client & Authentication Layer"]
+        U["End User Wallet\n(Phantom / Solflare)"]
+        CLI["Enterprise Sweeper CLI\n& Automation Worker"]
+        SA["Social Oracle / Gateway\n(Ed25519 Authority Key)"]
+    end
+
+    subgraph OnChainEngine ["Solana On-Chain Engine (Anchor Core)"]
+        ConfigAcc[("Program Config PDA\n['config']")]
+        UserAcc[("User Quest State PDA\n['user_profile', wallet]")]
+        TokenAcc["Target ATA\n(SPL / Token-2022)"]
+        VaultSOL["Rent Return Target\n(User Wallet)"]
+        
+        SweepInst["sweep_and_close_account()"]
+        QuestInst["verify_and_credit_quest()"]
+    end
+
+    subgraph ExternalIntegrations ["Enterprise API & Notification Fabric"]
+        Jup["Jupiter DEX Aggregator v6\n(Micro-dust swap routing)"]
+        DiscordWH["Discord Operations Channel\n(Webhook)"]
+        SlackWH["Slack Dev/Ops Channel\n(Webhook)"]
+        ResendAPI["Resend Enterprise Email\n(Transactional Receipts)"]
+    end
+
+    %% Flow Steps
+    U -->|1. Sign Sweeper / Quest Payload| CLI
+    SA -->|2. Issue Ed25519 Quest Attestation| CLI
+    
+    CLI -->|3. Submit sweep_and_close_account| SweepInst
+    CLI -->|4. Submit verify_and_credit_quest| QuestInst
+
+    SweepInst -->|Read/Update| ConfigAcc
+    SweepInst -->|Credit XP & Increment Tally| UserAcc
+    SweepInst -->|CPI CloseAccount| TokenAcc
+    TokenAcc -.->|Refund Rent 0.002039 SOL| VaultSOL
+
+    QuestInst -->|Verify Signature & Anti-Replay| ConfigAcc
+    QuestInst -->|Award Quest XP & Set Bitmask| UserAcc
+
+    SweepInst -.->|5. Emit On-Chain Event| CLI
+    QuestInst -.->|5. Emit On-Chain Event| CLI
+
+    CLI -->|6. Optional Dust Swap Routing| Jup
+    CLI -->|7. Post Alert Notification| DiscordWH
+    CLI -->|7. Post Alert Notification| SlackWH
+    CLI -->|8. Send Summary Receipt| ResendAPI

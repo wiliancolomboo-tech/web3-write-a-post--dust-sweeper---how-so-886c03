@@ -1,0 +1,16 @@
+1/ Dead rent is Solana's silent yield killer. 💸
+Every zero-balance ATA locks ~0.002039 SOL. If you've been active across DeFi & NFTs, you likely have 20–50 dead accounts holding $10–$50 in frozen liquidity.
+
+Enter @SolSweep_XP: Clean your wallet & claim your rent back in 1 click. 🧵👇
+
+2/ But reclaiming SOL is just Step 1. ⚡️
+We built an on-chain Social Quest & XP protocol powered by Ed25519 precompile cryptographic proofs.
+• Retweet or join Discord? Verified off-chain.
+• Signed Ed25519 Oracle proofs submitted on-chain.
+• Earn XP, level up your profile PDA, and slash DEX fees.
+
+3/ Zero-downtime, fully audited Anchor smart contracts + enterprise Slack & @resend webhooks for instantaneous transparency. 
+Clean your state, stack your XP, and reclaim your capital.
+
+Check out the open-source repo & start sweeping: https://github.com/your-org/solsweep-quest
+#Solana #SolanaDev #Anchor #Rust #Web3

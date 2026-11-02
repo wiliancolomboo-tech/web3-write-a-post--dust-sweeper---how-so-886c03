@@ -1,0 +1,5 @@
+Did you know your @solana wallet is leaking capital? 💸
+
+Every inactive SPL token account traps ~0.002039 SOL in rent exemption. If you've traded memecoins, you likely have 20–50 zombie accounts locking up $15–$50.
+
+Meet @SolSweep: The Autonomous Dust Sweeper + Gamified Social XP Engine. 🧵👇

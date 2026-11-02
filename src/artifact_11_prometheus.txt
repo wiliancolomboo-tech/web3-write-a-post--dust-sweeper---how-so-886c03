@@ -1,0 +1,9 @@
+# HELP solana_rent_reclaimed_lamports Total lamports reclaimed
+  # TYPE solana_rent_reclaimed_lamports counter
+  solana_rent_reclaimed_lamports 40785600
+  # HELP solana_dust_atas_closed Total ATAs closed
+  # TYPE solana_dust_atas_closed counter
+  solana_dust_atas_closed 20
+  # HELP solana_xp_minted Total XP awarded
+  # TYPE solana_xp_minted counter
+  solana_xp_minted 13400

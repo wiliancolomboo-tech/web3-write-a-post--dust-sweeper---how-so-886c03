@@ -1,0 +1,1 @@
+0 */6 * * * docker compose run --rm dust-xp-worker node dist/index.js --sweep >> /var/log/dust-sweeper.log 2>&1

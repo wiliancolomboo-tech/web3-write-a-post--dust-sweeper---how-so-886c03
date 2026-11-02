@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  aurasweep-daemon:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aurasweep-worker
+    restart: always
+    environment:
+      - SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
+      - SOLANA_KEYPAIR_PATH=/secrets/keypair.json
+      - ORACLE_SECRET_KEY=${ORACLE_SECRET_KEY}
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - LOG_LEVEL=info
+    volumes:
+      - ./secrets:/secrets:ro
+    command: ["node", "dist/cli.js", "sweep"]
+    healthcheck:
+      test: ["CMD", "node", "-e", "process.exit(0)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

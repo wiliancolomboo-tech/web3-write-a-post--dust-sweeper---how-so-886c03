@@ -1,0 +1,11 @@
+{
+  "status": "HEALTHY",
+  "uptime_seconds": 84129,
+  "cluster": "mainnet-beta",
+  "program_id": "DustSwp111111111111111111111111111111111111",
+  "metrics": {
+    "total_rent_reclaimed_sol": 128.472,
+    "accounts_closed": 63000,
+    "xp_distributed": 1420500
+  }
+}

@@ -1,0 +1,34 @@
+🧵 1/4
+Every active @Solana user has SOL trapped in dormant accounts.
+
+At ~0.002039 SOL locked per ATA, 50 orphan accounts lock up 0.1+ SOL in dead rent.
+
+Introducing our Hackathon-winning architecture: 
+🧹 Automated Dust Sweeper + On-Chain XP Engine.
+
+Here is how it works: 👇
+
+---
+
+🧵 2/4
+⚡ The Dust Sweeper scans your wallet, liquidates or burns unmarketable spam tokens, and batch-closes empty ATAs directly via SPL Token CPI.
+
+Result: 100% of the rent lamports return straight to your pocket, freeing trapped liquidity with sub-second finality.
+
+---
+
+🧵 3/4
+🎯 But we didn’t stop at cleaning wallets:
+Every sweep, social link (X, Discord, GitHub), and community quest awards non-transferable, soulbound XP directly into your on-chain User Profile PDA!
+
+Cryptographically secured by Ed25519 oracle signatures with monotonic replay protection.
+
+---
+
+🧵 4/4
+Clean your wallet. Reclaim your SOL. Climb the tiers from Novice to Elite Sweeper.
+
+Built with @AnchorLang 0.30+, automated via @Docker, and enterprise-integrated with @Resend & Discord.
+
+Check out the code & try it out: https://github.com/solana-dust-sweeper-xp
+#Solana #Rust #Web3 #BountyWinner

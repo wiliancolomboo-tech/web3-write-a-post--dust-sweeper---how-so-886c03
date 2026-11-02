@@ -1,0 +1,7 @@
+PORT=8080
+SOLANA_RPC_URL=https://api.devnet.solana.com
+PROGRAM_ID=DustSwp111111111111111111111111111111111111
+ADMIN_SECRET_KEY="[14,244,12,...]"
+DISCORD_WEBHOOK_URL="https://api.example.com/webhooks/alerts/placeholder"
+RESEND_API_KEY="re_123456789abcdef"
+NOTIFY_EMAIL="dev-ops@sponsor.io"

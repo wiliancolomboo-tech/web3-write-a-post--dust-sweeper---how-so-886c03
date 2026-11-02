@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  dust-sweeper-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: solana-dust-sweeper-agent
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
+      - KEYPAIR_PATH=/run/secrets/operator_key.json
+      - PROGRAM_ID=SweepXPRenT11111111111111111111111111111111
+      - DISCORD_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+      - RESEND_API_KEY=re_enterprise_key_123456789
+      - NOTIFICATION_EMAIL=ops@sponsor-dao.org
+      - PORT=8080
+    secrets:
+      - operator_key.json
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "5"
+
+secrets:
+  operator_key.json:
+    file: ./secrets/operator_key.json

@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  dust-sweeper-daemon:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dust_sweeper_daemon
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
+      - DUST_SWEEPER_PROGRAM_ID=DustSwp11111111111111111111111111111111111
+      - ORACLE_PRIVATE_KEY=${ORACLE_PRIVATE_KEY}
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL}
+      - RESEND_API_KEY=${RESEND_API_KEY}
+      - RESEND_FROM_EMAIL=receipts@dustsweeper.io
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "5"

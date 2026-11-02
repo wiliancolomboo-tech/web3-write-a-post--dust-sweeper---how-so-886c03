@@ -1,0 +1,20 @@
+🧵 1/3
+Hidden inside your Solana wallet right now is $20–$100+ of trapped SOL you didn't even know existed.
+
+Every time you trade a meme or receive an airdrop, an SPL Associated Token Account (ATA) is created, locking ~0.00204 SOL in rent.
+
+Enter our Dust Sweeper + On-Chain Quest Protocol 🧹⚡
+
+🧵 2/3
+We built an enterprise-grade Anchor engine that:
+✅ Burns/swaps useless micro-dust
+✅ Closes dormant ATAs & reclaims native SOL instantly to your wallet
+✅ Mints verifiable on-chain XP for keeping Solana clean
+✅ Unlocks VIP Tier rewards via Ed25519 cryptographic proofs 💎
+
+🧵 3/3
+No more dead token clutter. Turn useless dust into pure SOL + XP to level up your Web3 footprint.
+
+Ready to claim your trapped rent? Clean your wallet, complete social quests, and climb the ranks today! 🚀
+
+Tagging @solana @JupiterExchange #Solana #DeFi #Web3 #Rust

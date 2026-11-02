@@ -1,0 +1,11 @@
+🧵 1/3: Did you know your Solana wallet is bleeding rent? Every abandoned swap or zero-balance SPL token account traps ~0.00204 SOL in state storage. Across 50 dead accounts, that’s >0.1 SOL just gathering dust! 
+
+Meet the Dust Sweeper + Social Quest Engine 🧹⚡ Reclaim your SOL & earn on-chain XP!
+
+🧵 2/3: Under the hood:
+1️⃣ Reclaims rent by atomically purging dust ATAs back to pure SOL
+2️⃣ Cryptographic Ed25519 Oracle proofs verify your X/Discord quests on-chain
+3️⃣ Level up your Web3 profile & unlock leaderboard perks with zero replay exploits 🛡️
+
+🧵 3/3: Built for enterprise scale with full Anchor security, TypeScript SDK, and instant Discord/Slack webhook tracking. Clean your wallet, boost your XP, and reclaim your capital today:
+https://github.com/sponsor/solana-dust-sweeper #Solana #SolanaDev #Web3 #Rust

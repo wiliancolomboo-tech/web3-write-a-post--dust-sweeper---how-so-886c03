@@ -1,0 +1,17 @@
+1/ Dead tokens in your Solana wallet aren't just ugly—they're actively locking up your SOL. 
+
+Each unused Associated Token Account (ATA) freezes ~0.00204 SOL in storage rent. 50 dead mints = >0.10 SOL trapped. 
+
+Introducing the Dust Sweeper + Social Quests Protocol. Here is how it works: 🧵👇
+
+2/ Built on @Solana with @AnchorLang:
+🧹 Auto-sweeps zero-balance & spam ATAs via CPI to reclaim 100% of your rent.
+⚡ Links your wallet to an on-chain Soulbound XP engine.
+🎯 Complete social quests verified cryptographically via Ed25519 oracle signatures.
+Level up your Solana rank completely on-chain!
+
+3/ Enterprise-ready: Turnkey Docker workers, Jupiter V6 routing, and automated Discord / Resend telemetry. 
+
+Stop leaving rent on the table. Clean your wallet, complete your quests, and claim your XP.
+
+Explore the open-source repository & deploy today! @Solana #Solana #DeFi #Web3Dev

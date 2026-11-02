@@ -1,24 +1,25 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  dust-sweeper-agent:
+  solsweep-worker:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: solana-dust-sweeper-agent
-    restart: unless-stopped
+    restart: always
     environment:
       - SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
-      - WALLET_PATH=/secrets/wallet.json
-      - ORACLE_PATH=/secrets/oracle.json
-      - ENTERPRISE_WEBHOOK_URL=https://discord.com/api/webhooks/dummy/solana-sweeper
+      - ORACLE_PRIVATE_KEY=${ORACLE_PRIVATE_KEY}
+      - WEBHOOK_URL=${SLACK_OR_DISCORD_WEBHOOK_URL}
       - PORT=8080
-    volumes:
-      - ./secrets:/secrets:ro
     ports:
       - "8080:8080"
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost:8080/health"]
-      interval: 30s
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8080/health"]
+      interval: 15s
       timeout: 5s
       retries: 3
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "5"

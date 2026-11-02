@@ -1,0 +1,10 @@
+server {
+    listen 80;
+    server_name localhost;
+
+    location /health {
+        access_log off;
+        return 200 '{"status":"HEALTHY","service":"solana-dust-sweeper-agent","timestamp":"$time_iso8601"}';
+        add_header Content-Type application/json;
+    }
+}

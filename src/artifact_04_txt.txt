@@ -1,0 +1,8 @@
+[ Solana RPC Cluster ] <=== (JSON-RPC 2.0 WebSockets) ===> [ Sweeper Agent Daemon ]
+                                                                   │
+        ┌──────────────────────────────────────────────────────────┼─────────────────────────┐
+        ▼                                                          ▼                         ▼
+[ Jupiter DEX v6 API ]                                   [ Off-Chain Oracle ]      [ Enterprise Adapters ]
+- Price Discovery                                        - Ed25519 Keypair         - Discord Webhook
+- Swap Instruction Generation                            - Social Graph Verifier   - Slack Operations
+                                                                                   - Resend Email Service

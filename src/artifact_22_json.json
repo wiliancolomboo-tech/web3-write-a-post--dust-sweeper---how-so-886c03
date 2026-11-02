@@ -1,0 +1,8 @@
+{
+  "status": "healthy",
+  "program_id": "DustXP1111111111111111111111111111111111111",
+  "oracle_account": "Orac1e1111111111111111111111111111111111111",
+  "active_rpc_latency_ms": 38,
+  "total_sweeps_executed": 14208,
+  "sol_reclaimed_cumulative": 312.45
+}

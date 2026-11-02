@@ -1,0 +1,12 @@
++--------------------------------------------------------------------------------------------------+
+|                                  SPONSOR TURNKEY RUNBOOK                                         |
++------------------------------------+-------------------------------------------------------------+
+| Step                               | Command / Action                                            |
++------------------------------------+-------------------------------------------------------------+
+| 1. Build Program                   | anchor build                                                |
+| 2. Deploy to Devnet                | solana program deploy target/deploy/dust_sweeper_and_quests.so|
+| 3. Set Authority Key               | export QUEST_AUTHORITY_PUBKEY="<YOUR_KEYPAIR_PUBKEY>"       |
+| 4. Initialize Config               | ts-node scripts/init-protocol.ts                            |
+| 5. Launch Automated Worker         | docker compose up -d --build                                |
+| 6. Check Service Health            | curl http://localhost:8080/health                           |
++------------------------------------+-------------------------------------------------------------+

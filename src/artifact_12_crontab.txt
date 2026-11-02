@@ -1,0 +1,2 @@
+# Run automated dust sweep every midnight UTC
+   0 0 * * * cd /opt/dust-sweeper && docker compose run --rm dust-sweeper-daemon

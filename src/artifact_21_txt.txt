@@ -1,0 +1,8 @@
++---------------------+---------------------------------------------------------------+
+| INCIDENT SCENARIO   | MITIGATION / ACTION PLAN                                      |
++---------------------+---------------------------------------------------------------+
+| RPC Rate Limit 429  | Set SOLANA_RPC_URL to private RPC pool (e.g. Triton/Helius).   |
+| Ed25519 Sig Failure | Validate Oracle public key matches `ProtocolConfig` PDA state.|
+| Token Burn Rejection| Ensure SPL Token account authority has authorized delegate/burn|
+| Resend 403 Invalid  | Verify domain DNS DKIM/SPF settings in Resend dashboard.      |
++---------------------+---------------------------------------------------------------+

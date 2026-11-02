@@ -1,0 +1,22 @@
+🧵 1/3
+Holding dormant tokens & dead airdrops in your @Solana wallet? 
+
+Every single empty token account locks ~0.002039 SOL in rent. If you have 50 stale accounts, that is over 0.10 SOL trapped in dead state!
+
+Introducing the Dust Sweeper + On-Chain XP Quest Engine 🧹✨
+#Solana #Web3
+
+🧵 2/3
+How it works under the hood:
+1️⃣ Atomically closes zero-balance ATAs via Anchor CPI
+2️⃣ Reclaims locked lamports straight to your wallet
+3️⃣ Inscribes on-chain XP onto your UserProfile PDA with tier progressions (Bronze 🥉 ➔ Diamond 💎)
+4️⃣ Real-time multi-channel telemetry (Discord/Slack/Resend)
+
+🧵 3/3
+Turn your wallet cleanup into high-yield community engagement! 
+
+Complete social quests, refer friends, and verify tasks via our Ed25519 oracle to multiply your XP score on-chain.
+
+Clean wallets. Free SOL. Verifiable loyalty. 🚀
+Read the architecture & deploy in 1 click: https://github.com/sponsor-org/dust-sweeper-quest-engine

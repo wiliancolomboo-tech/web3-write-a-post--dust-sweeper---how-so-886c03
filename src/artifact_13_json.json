@@ -1,0 +1,9 @@
+{
+  "status": "UP",
+  "cluster": "mainnet-beta",
+  "slot_lag": 1,
+  "oracle_signer_active": true,
+  "reclaimed_sol_total": 452.128,
+  "total_xp_minted": 12845000,
+  "uptime_seconds": 864200
+}

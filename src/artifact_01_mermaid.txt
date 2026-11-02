@@ -1,38 +1,37 @@
 flowchart TD
-    subgraph Client["1. User & Client Interface"]
-        U[User Wallet / CLI Agent]
-        RPC[Solana JSON-RPC Pool]
+    subgraph ClientLayer [Client & User Interface Layer]
+        User[End User Wallet / Phantom / Solflare]
+        CLI[SweepXP Enterprise CLI & Worker]
     end
 
-    subgraph OffChain["2. Oracle & Quest Verification Engine"]
-        SO[Social Oracle Service]
-        TW[Twitter / X API v2]
-        DC[Discord Guild API]
-        WH[Enterprise Webhook / Slack]
+    subgraph OffChainLayer [Off-Chain Social & Verification Oracle]
+        API[Fastify Enterprise API Gateway]
+        QuestOracle[Social Quest Worker / Ed25519 Signer]
+        X_API[X / Twitter API v2]
+        Discord_API[Discord OAuth2 Engine]
+        NotifyEngine[Enterprise Notification Service: Resend / Slack / Discord]
     end
 
-    subgraph OnChain["3. Solana Program (dust_sweeper_xp)"]
-        PDA_CFG[Global Protocol Config PDA]
-        PDA_USR[User Profile & XP PDA]
-        ATA[Dormant Token ATA]
-        BURN[SPL Token Burn / Close CPI]
+    subgraph OnChainLayer [Solana Blockchain - Anchor Program]
+        Program[SweepXP Anchor Program]
+        UserXPState[User XP State PDA: seeds=[b'xp_state', user_pubkey]]
+        ProtocolConfig[Protocol Config PDA: seeds=[b'config']]
+        Jupiter[Jupiter v6 Swap Aggregator]
+        SPLToken[SPL Token / Token-2022 Program]
     end
 
-    %% Rent Sweep Flow
-    U -->|1. Query Token Accounts| RPC
-    RPC -->|2. Return Inactive ATAs| U
-    U -->|3. Invoke sweep_dust_and_close_account| OnChain
-    OnChain -->|4. CPI Token Close & Burn| ATA
-    ATA -->|5. Refund ~0.002039 SOL Rent| U
-    OnChain -->|6. Credit Sweep XP & Increment Nonce| PDA_USR
+    User -->|1. Request Dust Profile & Social Quests| API
+    API -->|2. Verify Social Engagements| QuestOracle
+    QuestOracle -->|Query Retweet / Follow| X_API
+    QuestOracle -->|Query Guild Membership| Discord_API
+    QuestOracle -->|3. Issue Ed25519 Quest Proof Signature| API
+    API -->|4. Return Sweep Route + Quest Auth Proof| User
 
-    %% Social Quest Flow
-    U -->|7. Complete Social Task| TW
-    U -->|7. Join Guild / Role| DC
-    SO -->|8. Verify Social Graph Activity| TW
-    SO -->|8. Verify Roles| DC
-    SO -->|9. Sign Ed25519 Quest Attestation| U
-    U -->|10. Invoke verify_and_claim_social_quest| OnChain
-    OnChain -->|11. Verify Oracle Signature & Quest Bitmask| PDA_USR
-    PDA_USR -->|12. Emit QuestCompletedEvent| RPC
-    RPC -->|13. Webhook Ingestion| WH
+    User -->|5. Execute Atomic Transaction: Sweep + Close ATA + Claim XP| Program
+    Program -->|a. Route Token Swap to SOL/USDC| Jupiter
+    Program -->|b. Burn Remaining Dust & Close Token Accounts| SPLToken
+    Program -->|c. Verify Signature & Accumulate XP| UserXPState
+    SPLToken -->|d. Refund 0.002039 SOL Rent per Closed ATA| User
+
+    Program -.->|6. Emit DustSweptEvent & QuestCompletedEvent| CLI
+    CLI -->|7. Push Real-time Receipt & Leaderboard Alert| NotifyEngine

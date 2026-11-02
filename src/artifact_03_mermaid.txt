@@ -1,0 +1,30 @@
+flowchart TD
+    subgraph Client["1. User & Client Layer"]
+        U["End User Wallet"] -->|1. Request Dust Scan| CLI["SolDust Web App / CLI Client"]
+        CLI -->|2. Query On-Chain ATAs| RPC["Solana RPC Node"]
+    end
+
+    subgraph DustPipeline["2. Dust Sweep & Rent Pipeline"]
+        RPC -->|3. Return Token Accounts| CLI
+        CLI -->|4. Get Swap Quotes for Dust| JUP["Jupiter V6 Routing API"]
+        JUP -->|5. Return Swap Instructions| CLI
+        CLI -->|6. Batch Close ATAs & Swap| ANCHOR["SolDust Anchor Smart Contract"]
+        ANCHOR -->|7. Close Account CPI| SPL["SPL Token Program"]
+        SPL -->|8. Refund Rent Lamports| U
+    end
+
+    subgraph QuestPipeline["3. Social Quest & Attestation Engine"]
+        U -->|9. Complete Quest: Follow/Retweet/Discord| SOCIAL["X (Twitter) & Discord APIs"]
+        ORACLE["Enterprise Attestation Service"] -->|10. Verify Social Action| SOCIAL
+        ORACLE -->|11. Generate Ed25519 Signature| ORACLE
+        ORACLE -->|12. Return Signed Quest Ticket| CLI
+        CLI -->|13. Submit claim_social_quest_xp| ANCHOR
+        ANCHOR -->|14. Verify Oracle Pubkey & Nonce| ANCHOR
+        ANCHOR -->|15. Increment XP & Upgrade Tier PDA| STATE["User XP Profile PDA"]
+    end
+
+    subgraph Enterprise["4. Enterprise Notification & Telemetry"]
+        CLI -->|16. Dispatch Sweep Event| RESEND["Resend API (Email Receipts)"]
+        CLI -->|17. Post Activity Webhook| DISCORD["Discord/Slack Community Webhook"]
+        CLI -->|18. Emit Metrics| PROM["Prometheus / Grafana Monitor"]
+    end

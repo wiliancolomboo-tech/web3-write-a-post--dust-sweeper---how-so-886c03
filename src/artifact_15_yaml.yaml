@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  sweeper-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - NODE_ENV=production
+      - SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
+      - PROGRAM_ID=DustXP1111111111111111111111111111111111111
+      - DISCORD_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+    volumes:
+      - ./keys:/app/keys:ro
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:8080/health', (r) => process.exit(r.statusCode === 200 ? 0 : 1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

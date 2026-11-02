@@ -1,0 +1,17 @@
+{
+  "status": "healthy",
+  "program_id": "DustSwp111111111111111111111111111111111111",
+  "uptime_seconds": 184520,
+  "metrics": {
+    "total_accounts_swept": 4821,
+    "total_sol_reclaimed": 9.83155,
+    "total_quests_verified": 12430,
+    "active_tier_distribution": {
+      "bronze": 6400,
+      "silver": 4200,
+      "gold": 1600,
+      "diamond": 230
+    }
+  },
+  "rpc_latency_ms": 42
+}

@@ -1,0 +1,8 @@
+Gamifying wallet hygiene: Clean dead accounts to boost your protocol tier and unlock institutional fee discounts.
+
+Built on Anchor 0.30.1 with enterprise webhooks via @Resend & Discord.
+
+Check out the complete open-source codebase & deployment runbook:
+github.com/sponsor-org/solana-dust-sweeper
+
+Clean your wallet. Earn verifiable XP. 🚀 @solana

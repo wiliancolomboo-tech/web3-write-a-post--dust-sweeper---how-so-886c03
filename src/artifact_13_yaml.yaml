@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  dust-sweeper-gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dust_sweeper_gateway
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
+      - ORACLE_SECRET_KEY_PATH=/run/secrets/oracle_key
+      - DISCORD_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+      - SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+      - RESEND_API_KEY=re_enterprise_token_here
+    secrets:
+      - oracle_key
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "5"
+
+secrets:
+  oracle_key:
+    file: ./oracle-authority.json

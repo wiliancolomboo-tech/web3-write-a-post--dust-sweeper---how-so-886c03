@@ -1,0 +1,7 @@
+SOLANA_RPC_URL=https://api.devnet.solana.com
+PROGRAM_ID=DustSwp111111111111111111111111111111111111
+ANCHOR_WALLET=/app/keys/payer-keypair.json
+ORACLE_KEYPAIR_PATH=/app/keys/oracle-keypair.json
+RESEND_API_KEY=re_live_enterprise_secret_key_here
+REPORT_EMAIL=operations@sponsor-dao.org
+DISCORD_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder

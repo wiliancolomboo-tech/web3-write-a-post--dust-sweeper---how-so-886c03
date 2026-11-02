@@ -1,0 +1,17 @@
+1/4 🧹 Wallet feeling cluttered with sub-cent tokens and inactive accounts? 
+
+Every dormant Associated Token Account on @solana locks up ~0.00204 SOL in rent. If you have 30 empty accounts, that’s ~$10+ in locked capital.
+
+Introducing Dust Sweeper & Quests on Solana ⚡🧵👇
+
+2/4 🛡️ How it works:
+1️⃣ Scan: Discover splinter balances & abandoned token accounts.
+2️⃣ Sweep & Burn: Clean the ledger, burn spam/scam tokens, and reclaim 100% of your rent SOL directly to your wallet.
+3️⃣ Earn XP: Cleanups and social actions reward soulbound on-chain XP!
+
+3/4 🎯 Social Quests = Verified On-Chain Reputation:
+Engage with community campaigns (X threads, governance, Discord roles). Our off-chain oracle generates cryptographic Ed25519 attestations, unlocking replay-proof on-chain tier upgrades. Zero bots, pure community value.
+
+4/4 Built with @AnchorLang, featuring atomic Ed25519 instruction verification, rent refunds, and automated alerts via @resend and Discord.
+
+Clean your wallet, reclaim your SOL, and level up your on-chain identity today! 🚀

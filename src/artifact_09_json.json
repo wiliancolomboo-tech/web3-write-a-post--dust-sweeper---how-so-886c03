@@ -1,0 +1,7 @@
+{
+  "status": "healthy",
+  "uptime": 86420,
+  "cluster": "mainnet-beta",
+  "oraclePublicKey": "7vKz...9fQw",
+  "activeWebhooks": ["Discord", "Resend"]
+}

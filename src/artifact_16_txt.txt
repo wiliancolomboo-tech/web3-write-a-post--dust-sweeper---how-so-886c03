@@ -1,0 +1,16 @@
++-----------------------------------------------------------------------------------+
+| PROCEDURE: DUST SWEEPER HEALTH & EMERGENCY DRILL                                  |
++-----------------------------------------------------------------------------------+
+| 1. LIVENESS CHECK:                                                                |
+|    curl -i http://localhost:8080/health                                           |
+|    Response: HTTP 200 {"status":"ok","network":"mainnet-beta","synced_slot":289381}  |
+|                                                                                   |
+| 2. ORACLE KEY ROTATION:                                                           |
+|    In the event of oracle key compromise, call program instruction:               |
+|    `update_oracle_authority(new_pubkey)` via the multisig admin keypair.          |
+|    The bitmask prevents any retro-replay of claims.                               |
+|                                                                                   |
+| 3. ESCALATION MATRIX:                                                             |
+|    - Severity 1 (RPC Failure): Automatic failover to secondary backup Triton RPC.  |
+|    - Severity 2 (Signature Mismatch Alerts): Auto-pause Discord ping to devops.   |
++-----------------------------------------------------------------------------------+

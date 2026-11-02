@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  solsweep-oracle:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: solsweep_oracle_service
+    restart: always
+    environment:
+      - PORT=8080
+      - SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
+      - ORACLE_PRIVATE_KEY_HEX=${ORACLE_PRIVATE_KEY_HEX}
+      - PROGRAM_ID=SwpCore1111111111111111111111111111111111111
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

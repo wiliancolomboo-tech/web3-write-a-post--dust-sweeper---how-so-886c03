@@ -1,0 +1,19 @@
+================================================================================
+                    SOLANA DUST SWEEPER OPERATIONAL RUNBOOK
+================================================================================
+
+1. INCIDENT: High RPC Failure Rate (HTTP 429 / 503)
+   - Trigger: Sweeper CLI logs "429 Too Many Requests" from public endpoint.
+   - Action: Update `SOLANA_RPC_URL` in docker-compose.yml to an enterprise endpoint 
+     (e.g., Triton RPC Pool, Helius, or QuickNode) with automatic websocket fallback.
+
+2. INCIDENT: Token Sweep Reverts with 'TokenAccountNotEmpty'
+   - Cause: User holds residual raw token balances > 0 (dust token).
+   - Solution: Client invokes the Jupiter Aggregator Route instruction before 
+     invoking `sweep_token_account` to liquidate micro-tokens into native SOL.
+
+3. ROUTINE MAINTENANCE: Master Authority Key Rotation
+   - Command: `solana-keygen new -o new_authority.json`
+   - Trigger the protocol config authority update instruction to ensure 
+     zero-downtime transition of off-chain quest signing power.
+================================================================================

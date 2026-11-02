@@ -1,0 +1,7 @@
+client/
+├── package.json
+├── tsconfig.json
+└── src/
+    ├── aura_engine.ts
+    ├── notifications.ts
+    └── run_cli.ts

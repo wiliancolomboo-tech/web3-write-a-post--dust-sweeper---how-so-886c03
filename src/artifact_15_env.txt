@@ -1,0 +1,9 @@
+PORT=3000
+NODE_ENV=production
+LOG_LEVEL=info
+SOLANA_RPC_URL=https://api.devnet.solana.com
+SOLANA_KEYPAIR_PATH=/app/secrets/id.json
+ATTESTATION_SECRET_KEY=e834... # 64-byte hex-encoded private key
+RESEND_API_KEY=re_123456789...
+SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
+DISCORD_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder

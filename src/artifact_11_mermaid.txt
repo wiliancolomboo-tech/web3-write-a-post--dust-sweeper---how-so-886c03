@@ -1,0 +1,12 @@
+sequenceDiagram
+    autonumber
+    actor User as User Wallet
+    participant Oracle as Enterprise Quest Oracle
+    participant Contract as Anchor Program (On-Chain)
+
+    User->>Oracle: Submit Social Quest Proof (X Tweet URL / Discord ID)
+    Oracle->>Oracle: Validate via Social API
+    Oracle-->>User: Return Signed Ed25519 Quest Ticket (Nonce + XP)
+    User->>Contract: claim_social_quest_xp(QuestID, XP, Nonce, Sig)
+    Contract->>Contract: Validate Sig == OracleKey && Nonce > LastNonce
+    Contract-->>User: Level Up! Emit SocialQuestCompleted Event

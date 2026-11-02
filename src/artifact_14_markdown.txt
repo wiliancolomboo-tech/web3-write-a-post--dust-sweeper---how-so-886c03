@@ -1,0 +1,25 @@
+🧵 1/3: Stop throwing away free $SOL! 
+
+Every single shitcoin & dead memecoin ATA in your wallet holds 0.002039 SOL (~$0.40) in locked rent exemption. 
+
+If you've been trading on @Solana, you likely have 50+ zombie accounts locking 0.1+ SOL in idle capital. 
+
+Here is how our Dust Sweeper reclaims it instantly 👇
+
+🧵 2/3: Enter the Dust Sweeper + Social Quest Protocol ⚡️
+
+🧹 Batch-burns micro-dust and closes empty ATAs in a single atomic tx.
+💰 Rent lamports go directly back to your wallet.
+🎮 Every sweep awards on-chain XP to your soulbound PDA profile!
+🏆 Complete verified social quests to boost XP & rank.
+
+Zero off-chain centralized points databases. 100% transparent cryptographic proofs powered by Ed25519 on-chain verification.
+
+🧵 3/3: Clean your wallet, level up your on-chain reputation, and reclaim your SOL.
+
+Open-source, non-custodial, and built for the @Solana ecosystem. 
+
+Dive into the code, review the audit report, and clean your wallet today: 
+github.com/solana-dust-sweeper/protocol
+
+#Solana #SolanaDev #DeFi #Web3Gaming

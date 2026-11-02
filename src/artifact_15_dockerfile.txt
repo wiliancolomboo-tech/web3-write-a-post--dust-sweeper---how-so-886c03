@@ -1,0 +1,17 @@
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY client/package*.json ./
+RUN npm install
+COPY client/tsconfig.json ./
+COPY client/src ./src
+RUN npm run build
+
+FROM node:20-alpine AS runner
+WORKDIR /app
+COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/dist ./dist
+
+ENV NODE_ENV=production
+ENTRYPOINT ["node", "dist/index.js"]
+CMD ["daemon"]

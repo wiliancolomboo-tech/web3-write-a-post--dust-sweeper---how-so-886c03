@@ -1,0 +1,10 @@
+{
+  "status": "healthy",
+  "uptime_seconds": 86420,
+  "metrics": {
+    "rpc_latency_ms": 34,
+    "oracle_balance_sol": 1.482,
+    "total_accounts_closed_24h": 412,
+    "total_rent_reclaimed_sol_24h": 0.84018
+  }
+}

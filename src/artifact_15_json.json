@@ -1,0 +1,12 @@
+{
+  "status": "healthy",
+  "programId": "SweepXPW1nner1111111111111111111111111111111",
+  "cluster": "devnet",
+  "oracleOnline": true,
+  "stats": {
+    "totalSweptAccounts": 4821,
+    "totalRentReclaimedSol": 9.8315,
+    "totalXpAwarded": 642000
+  },
+  "timestamp": "2025-05-18T10:00:00.000Z"
+}

@@ -1,0 +1,5 @@
+Got 20+ dormant tokens cluttering your Phantom or Solflare wallet? 🧹
+
+Every single token account locks ~0.00204 SOL in rent. If you have 50 empty accounts, that's >0.10 $SOL just sitting idle in your wallet.
+
+Introducing Solana Dust Sweeper: Reclaim your SOL + earn on-chain XP. 🧵👇

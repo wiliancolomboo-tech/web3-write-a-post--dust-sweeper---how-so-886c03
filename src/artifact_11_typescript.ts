@@ -1,20 +1,26 @@
-import http from "http";
+import express from "express";
+import { Connection } from "@solana/web3.js";
 
-const server = http.createServer((req, res) => {
-  if (req.url === "/health" && req.method === "GET") {
-    res.writeHead(200, { "Content-Type": "application/json" });
-    res.end(
-      JSON.stringify({
-        status: "HEALTHY",
-        uptime: process.uptime(),
-        timestamp: new Date().toISOString(),
-        network: "solana-mainnet",
-      })
-    );
-    return;
+const app = express();
+const connection = new Connection(process.env.SOLANA_RPC_URL || "https://api.mainnet-beta.solana.com");
+
+app.get("/health", async (_req, res) => {
+  try {
+    const epochInfo = await connection.getEpochInfo();
+    return res.status(200).json({
+      status: "HEALTHY",
+      currentEpoch: epochInfo.epoch,
+      slotIndex: epochInfo.slotIndex,
+      uptimeSeconds: process.uptime(),
+      timestamp: new Date().toISOString(),
+    });
+  } catch (err: any) {
+    return res.status(503).json({
+      status: "DEGRADED",
+      error: err.message,
+    });
   }
-  res.writeHead(404);
-  res.end();
 });
 
-server.listen(process.env.PORT || 8080);
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => console.log(`SolSweep Gateway running on :${PORT}`));

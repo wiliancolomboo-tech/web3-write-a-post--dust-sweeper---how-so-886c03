@@ -1,0 +1,8 @@
++-----------------------------------------------------------------------------------------------+
+|                                  THE SOLDUST VALUE PROPOSITION                                |
++-----------------------------------------------------------------------------------------------+
+|  Liquid Capital Recovery:     Verifiable Proof of Loyalty:        Turnkey Enterprise Ops:     |
+|  - 100% Non-Custodial ATA     - Ed25519 Signed Social Quests      - Jupiter V6 DEX Routing    |
+|    Rent Reclamation           - Anti-Sybil On-Chain XP State      - Resend Email Receipts     |
+|  - Instant Dust -> SOL Swap   - Soulbound Tier PDA Escalation     - Prometheus Telemetry      |
++-----------------------------------------------------------------------------------------------+

@@ -1,0 +1,12 @@
++-----------------------------------------------------------------------------------+
+|                        RUNBOOK & TROUBLESHOOTING CHECKS                           |
++----------------------+-----------------------------+------------------------------+
+| Anomaly              | Root Cause Diagnostic       | Resolution Action            |
++----------------------+-----------------------------+------------------------------+
+| TokenAccountNotEmpty | Sub-penny balance remainder | Execute Jupiter sub-swap or  |
+|                      | > 0 in account              | burn before close_account    |
+| ExpiredSignature     | Latency > 10m TTL           | Re-request oracle signature  |
+|                      |                             | with fresh timestamp & nonce |
+| UnauthorizedOracle   | Key mismatch against IX     | Verify ORACLE_PRIVATE_KEY    |
+|                      | sysvar signer payload       | in service configuration     |
++----------------------+-----------------------------+------------------------------+

@@ -1,0 +1,1 @@
+anchor init dust_sweeper_xp --typescript

@@ -1,0 +1,4 @@
+How it works under the hood:
+⚡ Atomic Token Burning: Eliminates scam spam & micro-dust via Token-2022 / SPL CPIs
+💰 Rent Recovery: Automatically unwinds ATAs and returns native SOL to your wallet
+🎮 Social Quests: Complete missions on X, Discord & GitHub to earn XP & unlock tiered streak multipliers!

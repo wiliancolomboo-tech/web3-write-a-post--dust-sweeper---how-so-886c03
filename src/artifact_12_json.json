@@ -1,0 +1,11 @@
+{
+  "status": "healthy",
+  "protocol": "solsweep-xp",
+  "program_id": "SwpXP11111111111111111111111111111111111111",
+  "network": "mainnet-beta",
+  "oracle_attestation_service": "active",
+  "webhook_relays": {
+    "discord": "connected",
+    "slack": "connected"
+  }
+}
