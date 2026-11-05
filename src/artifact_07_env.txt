@@ -4,6 +4,6 @@ TREASURY_PUBKEY=<TREASURY_SOLANA_PUBLIC_KEY>
 USER_PRIVATE_KEY=[12,34,56,...] # 64-byte JSON uint8 array
 ORACLE_PRIVATE_KEY=[98,76,54,...] # 64-byte Oracle authority keypair
 DISCORD_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
-RESEND_API_KEY=re_1234567890abcdef
+RESEND_API_KEY=re_test_000000000000000000000000
 NOTIFICATION_EMAIL=admin@protocol.xyz
 PORT=8080

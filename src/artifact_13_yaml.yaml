@@ -15,7 +15,7 @@ services:
       - ORACLE_SECRET_KEY_PATH=/run/secrets/oracle_key
       - DISCORD_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
       - SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
-      - RESEND_API_KEY=re_enterprise_token_here
+      - RESEND_API_KEY=re_test_000000000000000000000000
     secrets:
       - oracle_key
     logging:

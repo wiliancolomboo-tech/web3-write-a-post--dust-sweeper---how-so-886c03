@@ -8,7 +8,7 @@ services:
     restart: always
     environment:
       - SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
-      - RESEND_API_KEY=re_enterprise_123456789
+      - RESEND_API_KEY=re_test_000000000000000000000000
       - NOTIFICATION_EMAIL=alerts@solana-ecosystem.io
       - SLACK_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
       - ORACLE_SECRET_KEY=[1,2,3...]

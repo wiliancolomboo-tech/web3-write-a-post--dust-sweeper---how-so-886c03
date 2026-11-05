@@ -13,7 +13,7 @@ services:
       - KEYPAIR_PATH=/run/secrets/operator_key.json
       - PROGRAM_ID=SweepXPRenT11111111111111111111111111111111
       - DISCORD_WEBHOOK_URL=https://api.example.com/webhooks/alerts/placeholder
-      - RESEND_API_KEY=re_enterprise_key_123456789
+      - RESEND_API_KEY=re_test_000000000000000000000000
       - NOTIFICATION_EMAIL=ops@sponsor-dao.org
       - PORT=8080
     secrets:
